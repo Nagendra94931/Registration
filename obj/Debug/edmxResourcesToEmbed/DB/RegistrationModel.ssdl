@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="NewUserregistration">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="30" />
+    <Property Name="MarriageStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="50" />
+    <Property Name="Course" Type="nvarchar" MaxLength="50" />
+    <Property Name="Language" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="150" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="SID" />
+    </Key>
+    <Property Name="SID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MyDBModelStoreContainer">
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewUserregistration" EntityType="Self.NewUserregistration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
